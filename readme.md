@@ -3,6 +3,8 @@
 
   Render markdown as a manpage
 
+  ![Example](http://jb55.com/s/mdman.png)
+
 ## Installation
 
   Install with make (requires pandoc)
