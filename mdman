@@ -2,6 +2,6 @@
 
 tmpfile="/tmp/.${0##*/}-$$"
 
-pandoc -s -f markdown -t man - > "$tmpfile"
+pandoc -s -f markdown -t man ${1:--} > "$tmpfile"
 man "$tmpfile"
 rm -f "$tmpfile"
