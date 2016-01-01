@@ -12,7 +12,7 @@ in stdenv.mkDerivation rec {
 
   makeFlags = "PREFIX=$(out)";
 
-  buildInputs = [ pandoc ];
+  buildInputs = [ ];
 
   meta = with stdenv.lib; {
     description = "Render markdown as a manpage";
