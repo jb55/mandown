@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+tmpfile="/tmp/.${0##*/}-$$"
+
+pandoc -s -f markdown -t man - > "$tmpfile"
+man "$tmpfile"
+rm -f "$tmpfile"
