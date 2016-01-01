@@ -3,9 +3,10 @@
 let
   stdenv = pkgs.stdenv;
   pandoc = pkgs.pandoc;
+  man = pkgs.man;
 in stdenv.mkDerivation rec {
   name = "mdman-${version}";
-  version = "0.4";
+  version = "0.5";
 
   src = ./.;
 
@@ -24,5 +25,9 @@ in stdenv.mkDerivation rec {
     substituteInPlace mdman --replace \
       pandoc \
       ${pandoc}/bin/pandoc
+
+    substituteInPlace mdman --replace \
+      'man "$tmpfile"' \
+      "${man}/bin/man \"\$tmpfile\""
   '';
 }
