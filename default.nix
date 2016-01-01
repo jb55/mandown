@@ -17,7 +17,7 @@ in stdenv.mkDerivation rec {
     description = "Render markdown as a manpage";
     homepage = "https://github.com/jb55/mdman";
     maintainers = with maintainers; [ jb55 ];
-    license = licenses.gplv2;
+    license = licenses.gpl2;
   };
 
   patchPhase = ''
