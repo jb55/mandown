@@ -5,7 +5,7 @@ let
   pandoc = pkgs.pandoc;
 in stdenv.mkDerivation rec {
   name = "mdman-${version}";
-  version = "0.3";
+  version = "0.4";
 
   src = ./.;
 
