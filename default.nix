@@ -1,6 +1,9 @@
-{ stdenv, pandoc }:
+{ pkgs ? import <nixpkgs> {} }:
 
-stdenv.mkDerivation rec {
+let
+  stdenv = pkgs.stdenv;
+  pandoc = pkgs.pandoc;
+in stdenv.mkDerivation rec {
   name = "mdman-${version}";
   version = "0.1";
 
@@ -14,7 +17,7 @@ stdenv.mkDerivation rec {
     description = "Render markdown as a manpage";
     homepage = "https://github.com/jb55/mdman";
     maintainers = with maintainers; [ jb55 ];
-    license = licenses.mit;
+    license = licenses.gplv2;
   };
 
   patchPhase = ''
