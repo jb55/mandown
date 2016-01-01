@@ -1,11 +1,11 @@
 
-# mdman
+# mandown
 
   Render markdown as a manpage
 
-    $ mdman readme.md
+    $ mandown readme.md
 
-  ![Example](http://jb55.com/s/mdman.png)
+  ![Example](http://jb55.com/s/mandown.png)
 
 ## Installation
 
@@ -15,14 +15,14 @@
 
   Install with nix
 
-    $ nix-env -f https://github.com/jb55/mdman/archive/master.tar.gz -i
+    $ nix-env -f https://github.com/jb55/mandown/archive/master.tar.gz -i
 
 ## Usage
 
   stdin
 
-    $ rustc --explain E0412 | mdman
+    $ rustc --explain E0412 | mandown
 
   on a file
 
-    $ mdman readme.md
+    $ mandown readme.md

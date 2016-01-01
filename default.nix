@@ -5,7 +5,7 @@ let
   pandoc = pkgs.pandoc;
   man = pkgs.man;
 in stdenv.mkDerivation rec {
-  name = "mdman-${version}";
+  name = "mandown-${version}";
   version = "0.6";
 
   src = ./.;
@@ -16,17 +16,17 @@ in stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Render markdown as a manpage";
-    homepage = "https://github.com/jb55/mdman";
+    homepage = "https://github.com/jb55/mandown";
     maintainers = with maintainers; [ jb55 ];
     license = licenses.gpl2;
   };
 
   patchPhase = ''
-    substituteInPlace mdman --replace \
+    substituteInPlace mandown --replace \
       pandoc \
       ${pandoc}/bin/pandoc
 
-    substituteInPlace mdman --replace \
+    substituteInPlace mandown --replace \
       'man "$tmpfile"' \
       "${man}/bin/man \"\$tmpfile\""
   '';
