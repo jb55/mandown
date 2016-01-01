@@ -6,7 +6,7 @@ let
   man = pkgs.man;
 in stdenv.mkDerivation rec {
   name = "mandown-${version}";
-  version = "0.6";
+  version = "0.7";
 
   src = ./.;
 
