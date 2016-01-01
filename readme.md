@@ -15,7 +15,7 @@
 
   Install with nix
 
-    $ nix-env -f . -i
+    $ nix-env -f https://github.com/jb55/mdman/archive/master.tar.gz -i
 
 ## Usage
 
