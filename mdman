@@ -2,6 +2,6 @@
 
 tmpfile="$(mktemp)"
 
-pandoc -s -f markdown -t man ${1:--} > "$tmpfile"
+pandoc -s -f markdown -t man "${1:--}" > "$tmpfile"
 man "$tmpfile"
 rm -f "$tmpfile"
