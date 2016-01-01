@@ -3,6 +3,8 @@
 
   Render markdown as a manpage
 
+    $ mdman readme.md
+
   ![Example](http://jb55.com/s/mdman.png)
 
 ## Installation
