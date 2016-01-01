@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tmpfile="/tmp/.${0##*/}-$$"
+tmpfile="$(mktemp)"
 
 pandoc -s -f markdown -t man ${1:--} > "$tmpfile"
 man "$tmpfile"
