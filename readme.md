@@ -19,14 +19,6 @@
 
 ## Usage
 
-  stdin
+  See [the docs](doc/man.md)
 
-    $ rustc --explain E0412 | mandown
-
-  on a file
-
-    $ mandown readme.md
-
-  html!?
-
-    $ curl -s 'http://pandoc.org/getting-started.html' | mandown -f html
+  Also available at `man mandown` after installation 
