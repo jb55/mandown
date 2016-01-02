@@ -1,7 +1,30 @@
 #!/usr/bin/env bash
 
+usage() {
+  man mandown
+  exit 1
+}
+
+from="markdown"
+
+[[ "$1" == "--help" ]] && usage
+
+while [ "$#" -gt 1 ]; do
+    i="$1"; shift 1
+    case "$i" in
+        -f)
+            from="$1"
+            shift 1
+            ;;
+        *)
+            echo "$0: unknown option \`$i'"
+            exit 1
+            ;;
+    esac
+done
+
 tmpfile="$(mktemp)"
 
-pandoc -s -f markdown -t man "${1:--}" > "$tmpfile"
+pandoc -s -f "$from" -t man "${1:--}" > "$tmpfile"
 man "$tmpfile"
 rm -f "$tmpfile"
