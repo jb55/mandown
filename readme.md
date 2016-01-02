@@ -26,3 +26,7 @@
   on a file
 
     $ mandown readme.md
+
+  html!?
+
+    $ curl -s 'http://pandoc.org/getting-started.html' | mandown -f html
