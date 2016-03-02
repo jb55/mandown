@@ -15,7 +15,7 @@
 
   Install with nix
 
-    $ nix-env -f https://github.com/jb55/mandown/archive/master.tar.gz -i
+    $ nix-env -f https://jb55.com/pkgs -iA mandown
 
 ## Usage
 
