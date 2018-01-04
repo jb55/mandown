@@ -1,11 +1,17 @@
 
 # mandown
 
-  Render markdown as a manpage
+  Render anything (supported by pandoc) as a manpage
 
     $ mandown readme.md
 
   ![Example](http://jb55.com/s/mandown.png)
+
+## Examples
+
+    $ curl -sL 'website' | mandown html
+
+    $ mandown bip176.mediawiki
 
 ## Installation
 

@@ -5,26 +5,25 @@ usage() {
   exit 1
 }
 
-from="markdown"
-
 [[ "$1" == "--help" ]] && usage
 
-while [ "$#" -gt 1 ]; do
-    i="$1"; shift 1
-    case "$i" in
-        -f)
-            from="$1"
-            shift 1
-            ;;
-        *)
-            echo "$0: unknown option \`$i'"
-            exit 1
-            ;;
-    esac
-done
-
-tmpfile="$(mktemp)"
-
-pandoc -s -f "$from" -t man "${1:--}" > "$tmpfile"
-man "$tmpfile"
-rm -f "$tmpfile"
+if [ -t 0 ]; then
+  [ $# -eq 0 ] && usage
+  tmp="$(mktemp).man"
+  ext="${1##*.}"
+  if [ "$ext" == "md" ]; then
+    from="markdown"
+  else
+    from="$ext"
+  fi
+  pandoc -s -f "$from" -t man "$1" -o "$tmp"
+  man "$tmp"
+  rm -f "$tmp"
+else
+  [ $# -eq 0 ] && usage
+  from="${1:-markdown}"
+  tmp="$(mktemp).$from"
+  pandoc -s -f "$from" -t man "${2:--}" > "$tmp"
+  man "$tmp"
+  rm -f "$tmp"
+fi
